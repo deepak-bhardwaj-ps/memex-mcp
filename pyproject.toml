@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "memex-mcp"
+version = "0.1.0"
+description = "A portable markdown memory MCP server for any agent. Store durable, searchable memories as git-friendly markdown files."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+  { name = "Deepak Bhardwaj" },
+]
+keywords = ["mcp", "memory", "agents", "markdown", "frontmatter", "model-context-protocol", "ai"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries",
+  "Typing :: Typed",
+]
+dependencies = [
+  "mcp>=1.0.0",
+  "pydantic>=2.0.0",
+  "PyYAML>=6.0.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/deepak-bhardwaj-ps/memex-mcp"
+Documentation = "https://github.com/deepak-bhardwaj-ps/memex-mcp#readme"
+Repository = "https://github.com/deepak-bhardwaj-ps/memex-mcp.git"
+Issues = "https://github.com/deepak-bhardwaj-ps/memex-mcp/issues"
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2.0",
+  "pytest>=8.0.0",
+  "pytest-anyio>=0.0.0",
+  "twine>=5.0.0",
+]
+
+[project.scripts]
+memex-mcp = "memex_mcp.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["memex_mcp*"]
