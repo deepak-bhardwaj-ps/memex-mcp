@@ -6,9 +6,9 @@ import sys
 from collections.abc import Sequence
 from pathlib import Path
 
-from memex_mcp.server import create_server
-from memex_mcp.store import DEFAULT_MEMORY_ROOT, MemoryStore
-from memex_mcp.fix_frontmatter import scan_vault, print_summary
+from smriti_mcp.server import create_server
+from smriti_mcp.store import DEFAULT_MEMORY_ROOT, MemoryStore
+from smriti_mcp.fix_frontmatter import scan_vault, print_summary
 
 
 def cmd_server(args) -> None:
@@ -62,15 +62,15 @@ def cmd_rebuild(args) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="memxp-mcp",
-        description="Memex markdown memory tools and MCP server.",
+        prog="smriti-mcp",
+        description="Smriti markdown memory tools and MCP server.",
     )
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
 
     server_parser = subparsers.add_parser("server", help="Run the MCP server")
     server_parser.add_argument(
         "--memory-root",
-        default=os.environ.get("MEMEX_MEMORY_ROOT", str(DEFAULT_MEMORY_ROOT)),
+        default=os.environ.get("SMRITI_MEMORY_ROOT", str(DEFAULT_MEMORY_ROOT)),
         help="Directory where markdown memory notes are stored.",
     )
     server_parser.add_argument(
@@ -102,7 +102,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     rebuild_parser.add_argument(
         "--memory-root",
-        default=os.environ.get("MEMEX_MEMORY_ROOT", str(DEFAULT_MEMORY_ROOT)),
+        default=os.environ.get("SMRITI_MEMORY_ROOT", str(DEFAULT_MEMORY_ROOT)),
         help="Directory where markdown memory notes are stored.",
     )
     rebuild_parser.add_argument(
@@ -129,7 +129,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     parser.set_defaults(
         func=cmd_server,
-        memory_root=os.environ.get("MEMEX_MEMORY_ROOT", str(DEFAULT_MEMORY_ROOT)),
+        memory_root=os.environ.get("SMRITI_MEMORY_ROOT", str(DEFAULT_MEMORY_ROOT)),
         transport="stdio",
     )
     return parser

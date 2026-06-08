@@ -1,12 +1,12 @@
-# Memex MCP
+# Smriti MCP
 
 > A portable memory server for AI agents, built for the Model Context Protocol (MCP).
 
-[![PyPI version](https://img.shields.io/pypi/v/memxp-mcp.svg)](https://pypi.org/project/memxp-mcp/)
+[![PyPI version](https://img.shields.io/pypi/v/smriti-mcp.svg)](https://pypi.org/project/smriti-mcp/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-passing-brightgreen)]()
 
-Memex stores durable memories as plain markdown files with YAML frontmatter. This keeps your data readable, git-friendly, and easy to inspect outside any single agent runtime.
+Smriti stores durable memories as plain markdown files with YAML frontmatter. This keeps your data readable, git-friendly, and easy to inspect outside any single agent runtime.
 
 ## Features
 
@@ -23,14 +23,14 @@ Memex stores durable memories as plain markdown files with YAML frontmatter. Thi
 ### From PyPI
 
 ```bash
-pip install memxp-mcp
+pip install smriti-mcp
 ```
 
 ### From source
 
 ```bash
-git clone https://github.com/deepak-bhardwaj-ps/memex-mcp.git
-cd memex-mcp
+git clone https://github.com/deepak-bhardwaj-ps/smriti-mcp.git
+cd smriti-mcp
 pip install -e .
 ```
 
@@ -39,14 +39,14 @@ pip install -e .
 ### 1. Run the server locally
 
 ```bash
-memxp-mcp server --memory-root ~/.memex/memory
+smriti-mcp server --memory-root ~/.smriti/memory
 ```
 
-By default, Memex uses `~/.memex/memory`. You can override it with:
+By default, Smriti uses `~/.smriti/memory`. You can override it with:
 
 ```bash
-export MEMEX_MEMORY_ROOT="$HOME/.memex/memory"
-memxp-mcp server
+export SMRITI_MEMORY_ROOT="$HOME/.smriti/memory"
+smriti-mcp server
 ```
 
 ### 2. Configure in your MCP client
@@ -56,16 +56,16 @@ memxp-mcp server
 ```json
 {
   "mcpServers": {
-    "memex": {
+    "smriti": {
       "type": "stdio",
-      "command": "memxp-mcp",
-      "args": ["server", "--memory-root", "~/.memex/memory"]
+      "command": "smriti-mcp",
+      "args": ["server", "--memory-root", "~/.smriti/memory"]
     }
   }
 }
 ```
 
-Then restart Claude Desktop and Memex will be available as a tool.
+Then restart Claude Desktop and Smriti will be available as a tool.
 
 ## Available Tools
 
@@ -143,7 +143,7 @@ See also: [[Async Migration]], [[Performance Metrics]]
 ## File Structure
 
 ```
-~/.memex/memory/
+~/.smriti/memory/
 ├── project/
 │   ├── Example Architecture Decision.md
 │   ├── Async Migration.md
@@ -155,10 +155,10 @@ See also: [[Async Migration]], [[Performance Metrics]]
 └── index.md
 ```
 
-Memex keeps default filenames aligned with memory titles so Obsidian-style wikilinks like
+Smriti keeps default filenames aligned with memory titles so Obsidian-style wikilinks like
 `[[API Rate Limiting Strategy]]` resolve to `API Rate Limiting Strategy.md`.
 
-When you run `rebuild_memory`, Memex can automatically add missing wikilinks and normalize
+When you run `rebuild_memory`, Smriti can automatically add missing wikilinks and normalize
 alias links. It matches longer titles and aliases first and only links whole phrases, so
 `Durable Memory` is preferred over `durable`, and `able` is not linked inside `durable`.
 
@@ -167,9 +167,9 @@ alias links. It matches longer titles and aliases first and only links whole phr
 ### Create a memory
 
 ```python
-from memex_mcp.store import MemoryStore
+from smriti_mcp.store import MemoryStore
 
-store = MemoryStore("~/.memex/memory")
+store = MemoryStore("~/.smriti/memory")
 
 result = store.create_memory(
     {
@@ -230,7 +230,7 @@ pip install -e ".[dev]"
 pytest tests/ -v
 
 # Run integration tests only
-pytest tests/test_memex_mcp_integration.py -v
+pytest tests/test_smriti_mcp_integration.py -v
 ```
 
 All tests pass, including full MCP stdio round-trip integration tests.
@@ -274,4 +274,4 @@ Created by Deepak Bhardwaj.
 
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
 - [Claude MCP Documentation](https://claude.ai/resources/docs)
-- [Memex concept](https://en.wikipedia.org/wiki/Memex)
+- [Smriti concept](https://en.wikipedia.org/wiki/Smriti)

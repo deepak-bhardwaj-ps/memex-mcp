@@ -1,6 +1,6 @@
-# Publishing Memex MCP to PyPI
+# Publishing Smriti MCP to PyPI
 
-This guide walks through publishing memxp-mcp to PyPI for public installation.
+This guide walks through publishing smriti-mcp to PyPI for public installation.
 
 ## Prerequisites
 
@@ -47,8 +47,8 @@ python -m build
 ```
 
 This creates:
-- `dist/memxp_mcp-X.Y.Z.tar.gz` (source distribution)
-- `dist/memxp_mcp-X.Y.Z-py3-none-any.whl` (wheel)
+- `dist/smriti_mcp-X.Y.Z.tar.gz` (source distribution)
+- `dist/smriti_mcp-X.Y.Z-py3-none-any.whl` (wheel)
 
 ## Step 3: Test on TestPyPI (Recommended)
 
@@ -60,7 +60,7 @@ When prompted, use your TestPyPI credentials.
 
 Test installation:
 ```bash
-pip install --index-url https://test.pypi.org/simple/ memxp-mcp
+pip install --index-url https://test.pypi.org/simple/ smriti-mcp
 ```
 
 ## Step 4: Publish to PyPI
@@ -74,9 +74,9 @@ When prompted, use your PyPI credentials.
 ## Step 5: Verify
 
 Check that your package is available:
-- https://pypi.org/project/memxp-mcp/
-- Test installation: `pip install memxp-mcp`
-- Verify entry point: `memxp-mcp --help`
+- https://pypi.org/project/smriti-mcp/
+- Test installation: `pip install smriti-mcp`
+- Verify entry point: `smriti-mcp --help`
 
 ## Continuous Publishing with GitHub Actions
 

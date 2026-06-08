@@ -1,6 +1,6 @@
-# Contributing to Memex MCP
+# Contributing to Smriti MCP
 
-Thank you for your interest in contributing to Memex MCP! This document provides guidelines and instructions for contributing.
+Thank you for your interest in contributing to Smriti MCP! This document provides guidelines and instructions for contributing.
 
 ## Getting Started
 
@@ -13,8 +13,8 @@ Thank you for your interest in contributing to Memex MCP! This document provides
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/deepak-bhardwaj-ps/memex-mcp.git
-   cd memex-mcp
+   git clone https://github.com/deepak-bhardwaj-ps/smriti-mcp.git
+   cd smriti-mcp
    ```
 
 2. **Create a virtual environment**
@@ -71,10 +71,10 @@ Thank you for your interest in contributing to Memex MCP! This document provides
 pytest tests/ -v
 
 # Specific test file
-pytest tests/test_memex_store.py -v
+pytest tests/test_smriti_store.py -v
 
 # With coverage
-pytest tests/ --cov=src/memex_mcp --cov-report=html
+pytest tests/ --cov=src/smriti_mcp --cov-report=html
 ```
 
 ## Submitting Changes
@@ -136,4 +136,4 @@ By contributing, you agree that your contributions will be licensed under the MI
 
 Feel free to open an issue to ask questions about contributing or participating in this project.
 
-Thank you for making Memex MCP better! 🚀
+Thank you for making Smriti MCP better! 🚀

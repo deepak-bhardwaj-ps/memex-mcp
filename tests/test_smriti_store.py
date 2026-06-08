@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from memex_mcp.store import MemoryStore
+from smriti_mcp.store import MemoryStore
 
 
 def test_create_memory_uses_title_filename_and_markdown_frontmatter(tmp_path: Path) -> None:

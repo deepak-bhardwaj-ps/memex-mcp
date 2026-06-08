@@ -6,7 +6,7 @@ The `fix-frontmatter` tool scans markdown memory files in a vault or memory root
 
 ## Why This Matters
 
-Memory files in the Memex system require standardized frontmatter metadata to be properly indexed and discovered:
+Memory files in the Smriti system require standardized frontmatter metadata to be properly indexed and discovered:
 
 - **title** (required): Human-readable name of the memory
 - **category** (required): Broad namespace for grouping (e.g., 'signal', 'content-ideas', 'project')
@@ -21,7 +21,7 @@ Memory files in the Memex system require standardized frontmatter metadata to be
 ### Scan for Issues (Dry-run)
 
 ```bash
-memxp-mcp fix-frontmatter /path/to/memory-root --dry-run
+smriti-mcp fix-frontmatter /path/to/memory-root --dry-run
 ```
 
 This shows what issues exist without making any changes.
@@ -29,7 +29,7 @@ This shows what issues exist without making any changes.
 ### Fix All Issues
 
 ```bash
-memxp-mcp fix-frontmatter /path/to/memory-root
+smriti-mcp fix-frontmatter /path/to/memory-root
 ```
 
 This scans all files and:
@@ -121,7 +121,7 @@ short_description: null
 ## Command-Line Options
 
 ```
-usage: memxp-mcp fix-frontmatter [-h] [--dry-run] vault_path
+usage: smriti-mcp fix-frontmatter [-h] [--dry-run] vault_path
 
 positional arguments:
   vault_path      Path to the markdown vault or memory root to scan.
@@ -137,7 +137,7 @@ The `kb-lint` skill can be run after fixing frontmatter to identify any remainin
 
 ```bash
 # Fix frontmatter first
-memxp-mcp fix-frontmatter /path/to/memory-root
+smriti-mcp fix-frontmatter /path/to/memory-root
 
 # Then check for other health issues
 copilot /kb-lint
@@ -149,7 +149,7 @@ copilot /kb-lint
 A: No. The tool only adds missing fields. All existing metadata is preserved.
 
 **Q: What if I have custom frontmatter fields?**
-A: Custom fields are preserved. The tool only adds the standard Memex fields.
+A: Custom fields are preserved. The tool only adds the standard Smriti fields.
 
 **Q: Can I run this multiple times?**
 A: Yes. Running it multiple times is safe. It will only add missing fields on subsequent runs.
@@ -180,12 +180,12 @@ A: The tool uses the directory name as a fallback. For example, a file in `kb/si
 ## Technical Details
 
 - Written in: Python
-- Dependencies: `pyyaml` (already in memex_mcp)
+- Dependencies: `pyyaml` (already in smriti_mcp)
 - Processing: Single-pass, atomic file writes
 - Safety: Preserves all existing metadata
 
 ## See Also
 
-- [Memex Knowledge Base Patterns](../QUICKSTART.md)
+- [Smriti Knowledge Base Patterns](../QUICKSTART.md)
 - [kb-lint Health Check](./kb-lint.md)
 - [Memory File Format](./MEMORY_FORMAT.md)

@@ -12,14 +12,14 @@ from typing import Any
 
 import yaml
 
-from memex_mcp.frontmatter import MemoryDocument
+from smriti_mcp.frontmatter import MemoryDocument
 
 
 WIKILINK_RE = re.compile(r"\[\[([^\]|]+)(?:\|[^\]]+)?\]\]")
 WIKILINK_FULL_RE = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]")
 CODE_SPAN_RE = re.compile(r"```.*?```|`[^`\n]+`", re.DOTALL)
 MARKDOWN_LINK_RE = re.compile(r"!?\[[^\]]+\]\([^)]+\)")
-DEFAULT_MEMORY_ROOT = Path.home() / ".memex" / "memory"
+DEFAULT_MEMORY_ROOT = Path.home() / ".smriti" / "memory"
 
 
 @dataclass
@@ -274,7 +274,7 @@ class MemoryStore:
             "index": None,
         }
         if fix_frontmatter:
-            from memex_mcp.fix_frontmatter import scan_vault
+            from smriti_mcp.fix_frontmatter import scan_vault
 
             result["frontmatter"] = scan_vault(self.root, dry_run=dry_run)
         if apply_wikilinks:

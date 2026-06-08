@@ -43,12 +43,12 @@ jsonschema==4.26.0
 jsonschema-specifications==2025.9.1
     # via jsonschema
 mcp==1.27.2
-    # via memxp-mcp (pyproject.toml)
+    # via smriti-mcp (pyproject.toml)
 pycparser==3.0
     # via cffi
 pydantic==2.13.4
     # via
-    #   memxp-mcp (pyproject.toml)
+    #   smriti-mcp (pyproject.toml)
     #   mcp
     #   pydantic-settings
 pydantic-core==2.46.4
@@ -62,7 +62,7 @@ python-dotenv==1.2.2
 python-multipart==0.0.32
     # via mcp
 pyyaml==6.0.3
-    # via memxp-mcp (pyproject.toml)
+    # via smriti-mcp (pyproject.toml)
 referencing==0.37.0
     # via
     #   jsonschema

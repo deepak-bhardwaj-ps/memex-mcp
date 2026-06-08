@@ -17,7 +17,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-from memex_mcp.frontmatter import parse_markdown, build_markdown
+from smriti_mcp.frontmatter import parse_markdown, build_markdown
 
 
 def extract_title_from_filename(path: Path) -> str:

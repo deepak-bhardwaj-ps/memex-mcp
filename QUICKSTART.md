@@ -1,18 +1,18 @@
 # Quick Start Guide
 
-Get Memex MCP running with your favorite AI agent in minutes.
+Get Smriti MCP running with your favorite AI agent in minutes.
 
 ## Installation
 
 ```bash
-pip install memxp-mcp
+pip install smriti-mcp
 ```
 
 ## Claude Desktop
 
-1. **Install Memex MCP**
+1. **Install Smriti MCP**
    ```bash
-   pip install memxp-mcp
+   pip install smriti-mcp
    ```
 
 2. **Configure Claude Desktop**
@@ -22,10 +22,10 @@ pip install memxp-mcp
    ```json
    {
      "mcpServers": {
-       "memex": {
+       "smriti": {
          "type": "stdio",
-         "command": "memxp-mcp",
-         "args": ["server", "--memory-root", "~/.memex/memory"]
+         "command": "smriti-mcp",
+         "args": ["server", "--memory-root", "~/.smriti/memory"]
        }
      }
    }
@@ -33,7 +33,7 @@ pip install memxp-mcp
 
 3. **Restart Claude Desktop**
    
-   Close and reopen Claude Desktop. You'll see "Memex" in the tools list.
+   Close and reopen Claude Desktop. You'll see "Smriti" in the tools list.
 
 4. **Start Using**
    
@@ -44,9 +44,9 @@ pip install memxp-mcp
 
 ## Cline (VSCode)
 
-1. **Install Memex MCP**
+1. **Install Smriti MCP**
    ```bash
-   pip install memxp-mcp
+   pip install smriti-mcp
    ```
 
 2. **Configure in .clinerules or cline config**
@@ -54,9 +54,9 @@ pip install memxp-mcp
    ```json
    {
      "mcpServers": {
-       "memex": {
+       "smriti": {
          "type": "stdio",
-         "command": "memxp-mcp",
+         "command": "smriti-mcp",
          "args": ["server", "--memory-root", "/path/to/memories"]
        }
      }
@@ -70,9 +70,9 @@ pip install memxp-mcp
 
 ## Cursor
 
-1. **Install Memex MCP**
+1. **Install Smriti MCP**
    ```bash
-   pip install memxp-mcp
+   pip install smriti-mcp
    ```
 
 2. **Configure in Cursor settings**
@@ -81,9 +81,9 @@ pip install memxp-mcp
 
    ```json
    {
-     "memex": {
-       "command": "memxp-mcp",
-      "args": ["server", "--memory-root", "~/.memex/memory"]
+     "smriti": {
+       "command": "smriti-mcp",
+      "args": ["server", "--memory-root", "~/.smriti/memory"]
      }
    }
    ```
@@ -99,8 +99,8 @@ For any MCP-compatible client, configure:
 ```json
 {
   "type": "stdio",
-  "command": "memxp-mcp",
-  "args": ["server", "--memory-root", "~/.memex/memory"]
+  "command": "smriti-mcp",
+  "args": ["server", "--memory-root", "~/.smriti/memory"]
 }
 ```
 
@@ -122,7 +122,7 @@ The server will start and expose these tools:
 Memories are stored as markdown files:
 
 ```
-~/.memex/memory/
+~/.smriti/memory/
 ├── project/
 │   ├── Architecture Decisions.md
 │   └── Performance Tuning.md
@@ -159,29 +159,29 @@ Memories are stored as markdown files:
 
 ## Troubleshooting
 
-### Command not found: `memxp-mcp`
+### Command not found: `smriti-mcp`
 
 Ensure the package is installed:
 ```bash
-pip install --upgrade memxp-mcp
+pip install --upgrade smriti-mcp
 ```
 
 Check installation:
 ```bash
-which memxp-mcp
-memxp-mcp --help
+which smriti-mcp
+smriti-mcp --help
 ```
 
 ### Memories not showing up in searches
 
 1. Verify the memory root directory exists:
    ```bash
-   ls -la ~/.memex/memory/
+   ls -la ~/.smriti/memory/
    ```
 
 2. Check that memories were created:
    ```bash
-   find ~/.memex/memory/ -name "*.md" | head
+   find ~/.smriti/memory/ -name "*.md" | head
    ```
 
 3. Rebuild the index:
@@ -191,7 +191,7 @@ memxp-mcp --help
 
 Ensure the memory directory is writable:
 ```bash
-chmod -R u+w ~/.memex/memory/
+chmod -R u+w ~/.smriti/memory/
 ```
 
 ## Tips & Tricks

@@ -15,12 +15,12 @@ def anyio_backend() -> str:
 
 
 @pytest.mark.anyio
-async def test_memex_stdio_server_round_trip(tmp_path: Path) -> None:
+async def test_smriti_stdio_server_round_trip(tmp_path: Path) -> None:
     server = StdioServerParameters(
         command=sys.executable,
         args=[
             "-m",
-            "memex_mcp.cli",
+            "smriti_mcp.cli",
             "server",
             "--memory-root",
             str(tmp_path),

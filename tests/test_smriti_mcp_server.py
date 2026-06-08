@@ -1,10 +1,10 @@
 from pathlib import Path
 from typing import Any
 
-from memex_mcp.server import create_server
+from smriti_mcp.server import create_server
 
 
-def test_memex_server_registers_expected_tools(tmp_path: Path) -> None:
+def test_smriti_server_registers_expected_tools(tmp_path: Path) -> None:
     server = create_server(tmp_path)
 
     tools = server._tool_manager.list_tools()
@@ -25,7 +25,7 @@ def test_memex_server_registers_expected_tools(tmp_path: Path) -> None:
     }.issubset(names)
 
 
-def test_memex_tool_and_parameter_descriptions_are_complete(tmp_path: Path) -> None:
+def test_smriti_tool_and_parameter_descriptions_are_complete(tmp_path: Path) -> None:
     server = create_server(tmp_path)
 
     for tool in server._tool_manager.list_tools():

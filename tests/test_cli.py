@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from memex_mcp import cli
+from smriti_mcp import cli
 
 
 class FakeServer:
@@ -50,7 +50,7 @@ def test_legacy_option_only_invocation_defaults_to_server(monkeypatch, tmp_path:
 def test_no_args_defaults_to_server(monkeypatch, tmp_path: Path) -> None:
     fake_server = FakeServer()
 
-    monkeypatch.setenv("MEMEX_MEMORY_ROOT", str(tmp_path))
+    monkeypatch.setenv("SMRITI_MEMORY_ROOT", str(tmp_path))
     monkeypatch.setattr(cli, "create_server", lambda memory_root: fake_server)
 
     cli.main([])

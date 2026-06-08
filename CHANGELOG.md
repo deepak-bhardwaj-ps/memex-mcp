@@ -5,15 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.1] - 2026-06-08
-
-### Changed
-- Renamed the PyPI distribution and console script to `memxp-mcp` because `memex-mcp` is already owned by another project on PyPI.
-
-## [0.1.0] - 2026-06-05
+## [0.1.0] - 2026-06-08
 
 ### Added
-- Initial release of Memex MCP
+- Initial release of Smriti MCP
 - Core memory operations: create, read, update, delete, append
 - Full-text search across memories with ranking
 - Archive and soft-delete functionality
@@ -37,5 +32,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Path traversal attack prevention
 - Full MCP server compliance for agent compatibility
 
-[0.1.1]: https://github.com/deepak-bhardwaj-ps/memex-mcp/releases/tag/v0.1.1
-[0.1.0]: https://github.com/deepak-bhardwaj-ps/memex-mcp/releases/tag/v0.1.0
+[0.1.0]: https://github.com/deepak-bhardwaj-ps/smriti-mcp/releases/tag/v0.1.0

@@ -6,7 +6,7 @@ from typing import Annotated, Any
 from mcp.server.fastmcp import FastMCP
 from pydantic import BaseModel, Field
 
-from memex_mcp.store import DEFAULT_MEMORY_ROOT, MemoryStore
+from smriti_mcp.store import DEFAULT_MEMORY_ROOT, MemoryStore
 
 
 class MemoryMetaInput(BaseModel):
@@ -73,9 +73,9 @@ class SearchFilters(BaseModel):
 def create_server(memory_root: str | Path = DEFAULT_MEMORY_ROOT) -> FastMCP:
     store = MemoryStore(memory_root)
     server = FastMCP(
-        "Memex",
+        "Smriti",
         instructions=(
-            "Memex gives agents durable markdown memory. Store facts, decisions, "
+            "Smriti gives agents durable markdown memory. Store facts, decisions, "
             "preferences, project context, and reusable notes that should survive "
             "beyond the current chat."
         ),
@@ -101,7 +101,7 @@ def create_server(memory_root: str | Path = DEFAULT_MEMORY_ROOT) -> FastMCP:
             Field(
                 description=(
                     "Optional stable memory id such as 'project/Deploy Workflow'. "
-                    "If omitted, Memex creates one from category and title."
+                    "If omitted, Smriti creates one from category and title."
                 )
             ),
         ] = None,
