@@ -5,14 +5,14 @@ Get Memex MCP running with your favorite AI agent in minutes.
 ## Installation
 
 ```bash
-pip install memex-mcp
+pip install memxp-mcp
 ```
 
 ## Claude Desktop
 
 1. **Install Memex MCP**
    ```bash
-   pip install memex-mcp
+   pip install memxp-mcp
    ```
 
 2. **Configure Claude Desktop**
@@ -24,7 +24,7 @@ pip install memex-mcp
      "mcpServers": {
        "memex": {
          "type": "stdio",
-         "command": "memex-mcp",
+         "command": "memxp-mcp",
          "args": ["server", "--memory-root", "~/.memex/memory"]
        }
      }
@@ -46,7 +46,7 @@ pip install memex-mcp
 
 1. **Install Memex MCP**
    ```bash
-   pip install memex-mcp
+   pip install memxp-mcp
    ```
 
 2. **Configure in .clinerules or cline config**
@@ -56,7 +56,7 @@ pip install memex-mcp
      "mcpServers": {
        "memex": {
          "type": "stdio",
-         "command": "memex-mcp",
+         "command": "memxp-mcp",
          "args": ["server", "--memory-root", "/path/to/memories"]
        }
      }
@@ -72,7 +72,7 @@ pip install memex-mcp
 
 1. **Install Memex MCP**
    ```bash
-   pip install memex-mcp
+   pip install memxp-mcp
    ```
 
 2. **Configure in Cursor settings**
@@ -82,7 +82,7 @@ pip install memex-mcp
    ```json
    {
      "memex": {
-       "command": "memex-mcp",
+       "command": "memxp-mcp",
       "args": ["server", "--memory-root", "~/.memex/memory"]
      }
    }
@@ -99,7 +99,7 @@ For any MCP-compatible client, configure:
 ```json
 {
   "type": "stdio",
-  "command": "memex-mcp",
+  "command": "memxp-mcp",
   "args": ["server", "--memory-root", "~/.memex/memory"]
 }
 ```
@@ -159,17 +159,17 @@ Memories are stored as markdown files:
 
 ## Troubleshooting
 
-### Command not found: `memex-mcp`
+### Command not found: `memxp-mcp`
 
 Ensure the package is installed:
 ```bash
-pip install --upgrade memex-mcp
+pip install --upgrade memxp-mcp
 ```
 
 Check installation:
 ```bash
-which memex-mcp
-memex-mcp --help
+which memxp-mcp
+memxp-mcp --help
 ```
 
 ### Memories not showing up in searches

@@ -2,7 +2,7 @@
 
 > A portable memory server for AI agents, built for the Model Context Protocol (MCP).
 
-[![PyPI version](https://img.shields.io/pypi/v/memex-mcp.svg)](https://pypi.org/project/memex-mcp/)
+[![PyPI version](https://img.shields.io/pypi/v/memxp-mcp.svg)](https://pypi.org/project/memxp-mcp/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-passing-brightgreen)]()
 
@@ -23,7 +23,7 @@ Memex stores durable memories as plain markdown files with YAML frontmatter. Thi
 ### From PyPI
 
 ```bash
-pip install memex-mcp
+pip install memxp-mcp
 ```
 
 ### From source
@@ -39,14 +39,14 @@ pip install -e .
 ### 1. Run the server locally
 
 ```bash
-memex-mcp server --memory-root ~/.memex/memory
+memxp-mcp server --memory-root ~/.memex/memory
 ```
 
 By default, Memex uses `~/.memex/memory`. You can override it with:
 
 ```bash
 export MEMEX_MEMORY_ROOT="$HOME/.memex/memory"
-memex-mcp server
+memxp-mcp server
 ```
 
 ### 2. Configure in your MCP client
@@ -58,7 +58,7 @@ memex-mcp server
   "mcpServers": {
     "memex": {
       "type": "stdio",
-      "command": "memex-mcp",
+      "command": "memxp-mcp",
       "args": ["server", "--memory-root", "~/.memex/memory"]
     }
   }

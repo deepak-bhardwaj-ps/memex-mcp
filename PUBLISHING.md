@@ -1,6 +1,6 @@
 # Publishing Memex MCP to PyPI
 
-This guide walks through publishing memex-mcp to PyPI for public installation.
+This guide walks through publishing memxp-mcp to PyPI for public installation.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ version = "0.1.0"  # Update this version
 Move changes from `[Unreleased]` to the new version section:
 
 ```markdown
-## [0.1.0] - 2026-06-05
+## [X.Y.Z] - YYYY-MM-DD
 ### Added
 - Initial release features...
 ```
@@ -34,10 +34,10 @@ Move changes from `[Unreleased]` to the new version section:
 
 ```bash
 git add pyproject.toml CHANGELOG.md
-git commit -m "chore: prepare v0.1.0 release"
-git tag -a v0.1.0 -m "Release version 0.1.0"
+git commit -m "chore: prepare vX.Y.Z release"
+git tag -a vX.Y.Z -m "Release version X.Y.Z"
 git push origin main
-git push origin v0.1.0
+git push origin vX.Y.Z
 ```
 
 ## Step 2: Build Distribution
@@ -47,8 +47,8 @@ python -m build
 ```
 
 This creates:
-- `dist/memex-mcp-0.1.0.tar.gz` (source distribution)
-- `dist/memex_mcp-0.1.0-py3-none-any.whl` (wheel)
+- `dist/memxp_mcp-X.Y.Z.tar.gz` (source distribution)
+- `dist/memxp_mcp-X.Y.Z-py3-none-any.whl` (wheel)
 
 ## Step 3: Test on TestPyPI (Recommended)
 
@@ -60,7 +60,7 @@ When prompted, use your TestPyPI credentials.
 
 Test installation:
 ```bash
-pip install --index-url https://test.pypi.org/simple/ memex-mcp
+pip install --index-url https://test.pypi.org/simple/ memxp-mcp
 ```
 
 ## Step 4: Publish to PyPI
@@ -74,9 +74,9 @@ When prompted, use your PyPI credentials.
 ## Step 5: Verify
 
 Check that your package is available:
-- https://pypi.org/project/memex-mcp/
-- Test installation: `pip install memex-mcp`
-- Verify entry point: `memex-mcp --help`
+- https://pypi.org/project/memxp-mcp/
+- Test installation: `pip install memxp-mcp`
+- Verify entry point: `memxp-mcp --help`
 
 ## Continuous Publishing with GitHub Actions
 
@@ -121,7 +121,7 @@ Then configure the secret in GitHub repository settings.
 ### Distribution issues
 
 - **Build fails**: Run `python -m build --verbose` for more info
-- **Wheel creation fails**: Ensure `setuptools>=69` and `wheel` are installed
+- **Wheel creation fails**: Ensure the build-system dependencies in `pyproject.toml` are installed
 
 ## Subsequent Releases
 

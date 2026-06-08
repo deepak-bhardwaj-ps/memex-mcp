@@ -62,7 +62,7 @@ def cmd_rebuild(args) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="memex-mcp",
+        prog="memxp-mcp",
         description="Memex markdown memory tools and MCP server.",
     )
     subparsers = parser.add_subparsers(dest="command", help="Command to run")

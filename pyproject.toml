@@ -3,8 +3,8 @@ requires = ["setuptools>=77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "memex-mcp"
-version = "0.1.0"
+name = "memxp-mcp"
+version = "0.1.1"
 description = "A portable markdown memory MCP server for any agent. Store durable, searchable memories as git-friendly markdown files."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -47,7 +47,7 @@ dev = [
 ]
 
 [project.scripts]
-memex-mcp = "memex_mcp.cli:main"
+memxp-mcp = "memex_mcp.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

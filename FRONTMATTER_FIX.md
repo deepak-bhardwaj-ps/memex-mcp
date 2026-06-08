@@ -21,7 +21,7 @@ Memory files in the Memex system require standardized frontmatter metadata to be
 ### Scan for Issues (Dry-run)
 
 ```bash
-memex-mcp fix-frontmatter /path/to/memory-root --dry-run
+memxp-mcp fix-frontmatter /path/to/memory-root --dry-run
 ```
 
 This shows what issues exist without making any changes.
@@ -29,7 +29,7 @@ This shows what issues exist without making any changes.
 ### Fix All Issues
 
 ```bash
-memex-mcp fix-frontmatter /path/to/memory-root
+memxp-mcp fix-frontmatter /path/to/memory-root
 ```
 
 This scans all files and:
@@ -121,7 +121,7 @@ short_description: null
 ## Command-Line Options
 
 ```
-usage: memex-mcp fix-frontmatter [-h] [--dry-run] vault_path
+usage: memxp-mcp fix-frontmatter [-h] [--dry-run] vault_path
 
 positional arguments:
   vault_path      Path to the markdown vault or memory root to scan.
@@ -137,7 +137,7 @@ The `kb-lint` skill can be run after fixing frontmatter to identify any remainin
 
 ```bash
 # Fix frontmatter first
-memex-mcp fix-frontmatter /path/to/memory-root
+memxp-mcp fix-frontmatter /path/to/memory-root
 
 # Then check for other health issues
 copilot /kb-lint
